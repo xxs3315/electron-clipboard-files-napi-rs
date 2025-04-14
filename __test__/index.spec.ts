@@ -1,8 +1,12 @@
 import test from 'ava'
 
-import { plus100 } from '../index'
+import { hasFiles, getFiles } from '../index'
 
-test('sync function from native code', (t) => {
-  const fixture = 42
-  t.is(plus100(fixture), fixture + 100)
+test('has files', (t) => {
+  t.is(typeof hasFiles(), "boolean")
 })
+
+test('get files', (t) => {
+  t.is(typeof getFiles(), "object")
+})
+

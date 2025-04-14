@@ -3,10 +3,9 @@ import test from 'ava'
 import { hasFiles, getFiles } from '../index'
 
 test('has files', (t) => {
-  t.is(typeof hasFiles(), "boolean")
+  t.is(typeof hasFiles(), 'boolean')
 })
 
 test('get files', (t) => {
-  t.is(typeof getFiles(), "object")
+  t.is(typeof getFiles(), 'object')
 })
-

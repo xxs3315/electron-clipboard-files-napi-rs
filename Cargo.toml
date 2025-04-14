@@ -19,3 +19,8 @@ napi-build = "2"
 
 [profile.release]
 lto = true
+
+[build.env]
+passthrough = [
+  "RUST_BACKTRACE=1",
+]

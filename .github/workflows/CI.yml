@@ -235,6 +235,7 @@ jobs:
       - name: Test bindings
         run: yarn test
 # No Linux test for now as it just fails due to not having a desktop environment.
+# https://github.com/ChurchTao/clipboard-rs/blob/48ad90512edd62258707f4f38e72ce5998adf777/.github/workflows/test.yml#L56
 #  test-linux-x64-gnu-binding:
 #    name: Test bindings on Linux-x64-gnu - node@${{ matrix.node }}
 #    needs:

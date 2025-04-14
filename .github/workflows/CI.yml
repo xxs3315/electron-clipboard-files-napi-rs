@@ -261,7 +261,7 @@ jobs:
         run: ls -R .
         shell: bash
       - name: Test bindings
-        run: docker run --rm -e "RUST_BACKTRACE=1" -v $(pwd):/build -w /build node:${{ matrix.node }}-slim yarn test
+        run: docker run --rm -e "RUST_BACKTRACE=full" -v $(pwd):/build -w /build node:${{ matrix.node }}-slim yarn test
   test-linux-x64-musl-binding:
     name: Test bindings on x86_64-unknown-linux-musl - node@${{ matrix.node }}
     needs:
@@ -293,7 +293,7 @@ jobs:
         run: ls -R .
         shell: bash
       - name: Test bindings
-        run: docker run --rm -e "RUST_BACKTRACE=1" -v $(pwd):/build -w /build node:${{ matrix.node }}-alpine yarn test
+        run: docker run --rm -e "RUST_BACKTRACE=full" -v $(pwd):/build -w /build node:${{ matrix.node }}-alpine yarn test
   test-linux-aarch64-gnu-binding:
     name: Test bindings on aarch64-unknown-linux-gnu - node@${{ matrix.node }}
     needs:
@@ -386,7 +386,7 @@ jobs:
         uses: docker/setup-qemu-action@v3
         with:
           platforms: arm
-      - run: docker run --rm -e "RUST_BACKTRACE=1" --privileged multiarch/qemu-user-static --reset -p yes
+      - run: docker run --rm -e "RUST_BACKTRACE=full" --privileged multiarch/qemu-user-static --reset -p yes
       - name: Setup and run tests
         uses: addnab/docker-run-action@v3
         with:

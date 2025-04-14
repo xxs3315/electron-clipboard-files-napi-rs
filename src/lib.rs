@@ -8,7 +8,7 @@ extern crate napi_derive;
 pub fn has_files() -> bool {
   let ctx = ClipboardContext::new().unwrap();
   let has = ctx.has(ContentFormat::Files);
-  println!("has_files={}", has);
+  // println!("has_files={}", has);
   has
 }
 
@@ -16,6 +16,6 @@ pub fn has_files() -> bool {
 pub fn get_files() -> Vec<String> {
   let ctx = ClipboardContext::new().unwrap();
   let files = ctx.get_files().unwrap_or_default();
-  println!("{:?}", files);
+  // println!("{:?}", files);
   files
 }

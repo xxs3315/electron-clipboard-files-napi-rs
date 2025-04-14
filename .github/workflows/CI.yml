@@ -4,6 +4,7 @@ env:
   APP_NAME: electron-clipboard-files-napi-rs
   MACOSX_DEPLOYMENT_TARGET: '10.13'
   CARGO_INCREMENTAL: '1'
+  DISPLAY: ':0'
 permissions:
   contents: write
   id-token: write

@@ -1,19 +1,23 @@
 import { Bench } from 'tinybench'
 
-import { plus100 } from '../index.js'
+import { hasFiles, getFiles } from '../index.js'
 
-function add(a: number) {
-  return a + 100
+function fnHasFiles(): boolean {
+  return hasFiles()
+}
+
+function fnGetFiles(): object {
+  return getFiles()
 }
 
 const b = new Bench()
 
-b.add('Native a + 100', () => {
-  plus100(10)
+b.add('has files', () => {
+  fnHasFiles()
 })
 
-b.add('JavaScript a + 100', () => {
-  add(10)
+b.add('get files', () => {
+  fnGetFiles()
 })
 
 await b.run()

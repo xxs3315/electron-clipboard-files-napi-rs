@@ -5,3 +5,7 @@
 
 export declare function hasFiles(): boolean
 export declare function getFiles(): Array<string>
+export declare function hasImage(): boolean
+export declare function hasHtml(): boolean
+export declare function hasRtf(): boolean
+export declare function hasText(): boolean

@@ -284,7 +284,11 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { hasFiles, getFiles } = nativeBinding
+const { hasFiles, getFiles, hasImage, hasHtml, hasRtf, hasText } = nativeBinding
 
 module.exports.hasFiles = hasFiles
 module.exports.getFiles = getFiles
+module.exports.hasImage = hasImage
+module.exports.hasHtml = hasHtml
+module.exports.hasRtf = hasRtf
+module.exports.hasText = hasText

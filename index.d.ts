@@ -9,3 +9,6 @@ export declare function hasImage(): boolean
 export declare function hasHtml(): boolean
 export declare function hasRtf(): boolean
 export declare function hasText(): boolean
+export declare function getText(): string
+export declare function getRtf(): string
+export declare function getHtml(): string

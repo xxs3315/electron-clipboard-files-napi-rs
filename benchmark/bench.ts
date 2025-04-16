@@ -1,6 +1,6 @@
 import { Bench } from 'tinybench'
 
-import { hasFiles, getFiles, hasHtml, hasImage, hasRtf, hasText } from '../index.js'
+import { hasFiles, getFiles, hasHtml, hasImage, hasRtf, hasText, getText, getHtml, getRtf } from '../index.js'
 
 function fnHasFiles(): boolean {
   return hasFiles()
@@ -24,6 +24,18 @@ function fnHasText(): boolean {
 
 function fnGetFiles(): object {
   return getFiles()
+}
+
+function fnGetText(): string {
+  return getText()
+}
+
+function fnGetRtf(): string {
+  return getRtf()
+}
+
+function fnGetHtml(): string {
+  return getHtml()
 }
 
 const b = new Bench()
@@ -50,6 +62,18 @@ b.add('has test', () => {
 
 b.add('get files', () => {
   fnGetFiles()
+})
+
+b.add('get text', () => {
+  fnGetText()
+})
+
+b.add('get rtf', () => {
+  fnGetRtf()
+})
+
+b.add('get html', () => {
+  fnGetHtml()
 })
 
 await b.run()

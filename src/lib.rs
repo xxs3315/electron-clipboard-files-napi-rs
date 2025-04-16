@@ -1,4 +1,5 @@
 #![deny(clippy::all)]
+
 use clipboard_rs::{Clipboard, ClipboardContext, ContentFormat};
 
 #[macro_use]
@@ -38,4 +39,22 @@ pub fn has_rtf() -> bool {
 pub fn has_text() -> bool {
   let ctx = ClipboardContext::new().unwrap();
   ctx.has(ContentFormat::Text)
+}
+
+#[napi]
+pub fn get_text() -> String {
+  let ctx = ClipboardContext::new().unwrap();
+  ctx.get_text().unwrap()
+}
+
+#[napi]
+pub fn get_rtf() -> String {
+  let ctx = ClipboardContext::new().unwrap();
+  ctx.get_rich_text().unwrap()
+}
+
+#[napi]
+pub fn get_html() -> String {
+  let ctx = ClipboardContext::new().unwrap();
+  ctx.get_html().unwrap()
 }

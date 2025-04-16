@@ -43,18 +43,18 @@ pub fn has_text() -> bool {
 
 #[napi]
 pub fn get_text() -> String {
-  let ctx = ClipboardContext::new().unwrap();
-  ctx.get_text().map_err(|err| err.to_string()).unwrap()
+  let ctx = ClipboardContext::new();
+  ctx.map_err(|err| err.to_string())?.get_text().unwrap_or_default()
 }
 
 #[napi]
 pub fn get_rtf() -> String {
-  let ctx = ClipboardContext::new().unwrap();
-  ctx.get_rich_text().map_err(|err| err.to_string()).unwrap()
+  let ctx = ClipboardContext::new();
+  ctx.map_err(|err| err.to_string())?.get_rich_text().unwrap_or_default()
 }
 
 #[napi]
 pub fn get_html() -> String {
-  let ctx = ClipboardContext::new().unwrap();
-  ctx.get_html().map_err(|err| err.to_string()).unwrap()
+  let ctx = ClipboardContext::new();
+  ctx.map_err(|err| err.to_string())?.get_html().unwrap_or_default()
 }
